@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WonderKing Monster Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; background:#0f1220; color:#eaeaf0; margin:0; }
+    header { padding:16px 20px; background:#171a33; position:sticky; top:0; z-index:10; }
+    h1 { margin:0 0 8px 0; font-size:22px; }
+    .controls { display:flex; gap:8px; flex-wrap:wrap; }
+    input, select { padding:8px 10px; border-radius:8px; border:1px solid #2b2f63; background:#0b0e2a; color:#eaeaf0; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { padding:8px 10px; border-bottom:1px solid #22265a; text-align:left; }
+    th { position:sticky; top:88px; background:#12153a; cursor:pointer; }
+    tr:hover { background:#161a4a; }
+    .wrap { padding:12px 20px; }
+    .badge { padding:2px 8px; border-radius:999px; background:#2b2f63; font-size:12px; }
+    .small { color:#b9bbff; font-size:12px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>WonderKing Monster Book</h1>
+  <div class="controls">
+    <input id="search" placeholder="Search name, map, area…" />
+    <select id="region">
+      <option value="">All Regions</option>
+      <option>Elgaeil</option>
+      <option>Francis</option>
+      <option>Wonderland</option>
+      <option>Hellen</option>
+      <option>Nagapaz Plateau</option>
+      <option>Rapel Mountains</option>
+      <option>Dark Village</option>
+      <option>Catacomb</option>
+      <option>Mandeus’ Domain</option>
+      <option>Froneus’ Room</option>
+    </select>
+    <input id="minLv" type="number" placeholder="Min Lv" style="width:90px" />
+    <input id="maxLv" type="number" placeholder="Max Lv" style="width:90px" />
+  </div>
+</header>
+<div class="wrap">
+  <table id="table">
+    <thead>
+      <tr>
+        <th data-k="name">Monster</th>
+        <th data-k="lv">Lv</th>
+        <th data-k="map">World</th>
+        <th data-k="area">Spawn Area</th>
+        <th data-k="zed">Zed</th>
+        <th data-k="exp">EXP</th>
+        <th>Drops</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <p class="small">Tip: click column headers to sort.</p>
+</div>
+
+<script>
+// ---- DATA ----
+// This is a representative subset. You can keep appending rows using the same structure.
+const DATA = [
+  { name:"Bicycle Tsus", lv:93, map:"Wonderland", area:"Parking Lot", zed:93000, exp:668250, drops:"Lv.90 Equipment" },
+  { name:"Parking Attendant", lv:94, map:"Wonderland", area:"Parking Lot", zed:94000, exp:683250, drops:"Lv.90 Equipment" },
+  { name:"Gang Leader", lv:95, map:"Wonderland", area:"Market Street 2", zed:95000, exp:698250, drops:"Lv.90 Equipment" },
+  { name:"Security Robot", lv:96, map:"Wonderland", area:"Market Street 2", zed:96000, exp:713250, drops:"Lv.90 Equipment" },
+  { name:"Durahan", lv:250, map:"Catacomb", area:"Durahan’s Room", zed:5418261, exp:7554080156, drops:"Lv.250 Equipment" },
+  { name:"Neisa", lv:300, map:"Mandeus’ Domain", area:"Neisa’s Room", zed:8911044, exp:39268620234, drops:"Lv.300 Equipment" },
+];
+
+// ---- RENDER ----
+const tbody = document.querySelector('tbody');
+let sortKey = 'lv', sortDir = 1;
+
+function render(rows) {
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td><strong>${r.name}</strong></td>
+      <td>${r.lv}</td>
+      <td><span class="badge">${r.map}</span></td>
+      <td>${r.area}</td>
+      <td>${r.zed.toLocaleString()}</td>
+      <td>${r.exp.toLocaleString()}</td>
+      <td>${r.drops}</td>
+    </tr>`).join('');
+}
+
+function applyFilters() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const reg = document.getElementById('region').value;
+  const minLv = Number(document.getElementById('minLv').value || 0);
+  const maxLv = Number(document.getElementById('maxLv').value || 9999);
+  let rows = DATA.filter(r =>
+    (!reg || r.map === reg) &&
+    r.lv >= minLv && r.lv <= maxLv &&
+    (r.name.toLowerCase().includes(q) || r.map.toLowerCase().includes(q) || r.area.toLowerCase().includes(q))
+  );
+  rows.sort((a,b)=> (a[sortKey] > b[sortKey] ? 1 : -1) * sortDir);
+  render(rows);
+}
+
+// ---- EVENTS ----
+document.getElementById('search').addEventListener('input', applyFilters);
+document.getElementById('region').addEventListener('change', applyFilters);
+document.getElementById('minLv').addEventListener('input', applyFilters);
+document.getElementById('maxLv').addEventListener('input', applyFilters);
+
+document.querySelectorAll('th[data-k]').forEach(th => {
+  th.addEventListener('click', () => {
+    const k = th.dataset.k;
+    sortDir = (sortKey === k) ? -sortDir : 1;
+    sortKey = k;
+    applyFilters();
+  });
+});
+
+applyFilters();
+</script>
+</body>
+</html>
