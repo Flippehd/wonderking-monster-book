@@ -68,24 +68,327 @@
 
 const DATA = [
   // --- Elgaeil (Beginner) ---
-  { name:"Yellow Pooma", lv:1, map:"Elgaeil", area:"Elgaeil Area 1–3", zed:1000, exp:25, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
-  { name:"Red Pooma", lv:2, map:"Elgaeil", area:"Elgaeil Area 2–3", zed:2000, exp:50, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
-  { name:"Blue Pooma", lv:5, map:"Elgaeil", area:"Elgaeil Area 3", zed:5000, exp:125, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
-  { name:"Leaf Pooma", lv:6, map:"Elgaeil", area:"Farm 1–2", zed:6000, exp:150, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
-  { name:"Carrot Man", lv:7, map:"Elgaeil", area:"Farm 1–2", zed:7000, exp:175, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
-  { name:"Carrot Rabbit", lv:7, map:"Elgaeil", area:"Farm 2", zed:7000, exp:175, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
-  { name:"Yellow Easter", lv:8, map:"Elgaeil", area:"Training Area Entrance–1", zed:8000, exp:200, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
-  { name:"Blue Easter", lv:10, map:"Elgaeil", area:"Training Area 1–2", zed:10000, exp:250, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+ { name:"Yellow Pooma", lv:1, map:"Elgaeil", area:"Elgaeil Area 1–3", zed:1000, exp:25, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Red Pooma", lv:2, map:"Elgaeil", area:"Elgaeil Area 2–3", zed:2000, exp:50, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Blue Pooma", lv:5, map:"Elgaeil", area:"Elgaeil Area 3", zed:5000, exp:125, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Leaf Pooma", lv:6, map:"Elgaeil", area:"Farm 1–2", zed:6000, exp:150, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Carrot Man", lv:7, map:"Elgaeil", area:"Farm 1–2", zed:7000, exp:175, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Carrot Rabbit", lv:7, map:"Elgaeil", area:"Farm 2", zed:7000, exp:175, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Yellow Easter", lv:8, map:"Elgaeil", area:"Training Area Entrance, Training Area 1", zed:8000, exp:200, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Blue Easter", lv:10, map:"Elgaeil", area:"Training Area 1–2", zed:10000, exp:250, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
 
-  // --- Wonderland (sample shown; continue pattern for all remaining monsters) ---
-  { name:"Bicycle Tsus", lv:93, map:"Wonderland", area:"Parking Lot", zed:93000, exp:668250, drops:"Lv.90 Equipment" },
-  { name:"Parking Attendant", lv:94, map:"Wonderland", area:"Parking Lot", zed:94000, exp:683250, drops:"Lv.90 Equipment" },
-  { name:"Gang Leader", lv:95, map:"Wonderland", area:"Market Street 2", zed:95000, exp:698250, drops:"Lv.90 Equipment" },
+{ name:"Wriggler", lv:11, map:"Elgaeil", area:"Elgaeil Coast 1–3", zed:11000, exp:275, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Hermit", lv:11, map:"Elgaeil", area:"Elgaeil Coast 2–4", zed:11000, exp:275, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Okro", lv:13, map:"Elgaeil", area:"Elgaeil Coast 3–5", zed:13000, exp:325, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Deviel", lv:14, map:"Elgaeil", area:"Elgaeil Coast 5", zed:14000, exp:350, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
 
-  // --- Endgame ---
-  { name:"Durahan", lv:250, map:"Catacomb", area:"Durahan’s Room", zed:5418261, exp:7554080156, drops:"Lv.250 Equipment" },
-  { name:"Neisa", lv:300, map:"Mandeus’ Domain", area:"Neisa’s Room", zed:8911044, exp:39268620234, drops:"Lv.300 Equipment" },
-  { name:"Dasven Robot", lv:303, map:"Dasven Titan Zone", area:"Fortress East 1–2", zed:612070, exp:4208112023, drops:"Lv.300 Accessories" }
+{ name:"Gray Pooma", lv:16, map:"Elgaeil", area:"Contaminated Land 1–2", zed:16000, exp:400, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+{ name:"Darkel", lv:20, map:"Elgaeil", area:"Contaminated Land 2–3", zed:20000, exp:500, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+
+{ name:"Blue Hauzel", lv:21, map:"Elgaeil", area:"Cliffside Path, Windy Cliff 1", zed:21000, exp:525, drops:"Lv.20 Equipment, Small HP/MP Potions" },
+{ name:"Red Hauzel", lv:21, map:"Elgaeil", area:"Windy Cliff 1–2", zed:21000, exp:525, drops:"Lv.20 Equipment, Small HP/MP Potions" },
+{ name:"Pony", lv:22, map:"Elgaeil", area:"Windy Cliff 3–5", zed:22000, exp:550, drops:"Lv.20 Equipment, Small HP/MP Potions" },
+
+{ name:"Naughty Pony", lv:23, map:"Elgaeil", area:"Windy Cliff 4–5", zed:23000, exp:575, drops:"Lv.20 Equipment, Small HP/MP Potions" },
+{ name:"Pony Brother", lv:25, map:"Elgaeil", area:"Windy Cliff 5–6", zed:25000, exp:625, drops:"Lv.20 Equipment, Small HP/MP Potions" },
+{ name:"Bugal", lv:26, map:"Elgaeil", area:"Windy Cliff 6, Elgaeil Shore", zed:26000, exp:650, drops:"Lv.20 Equipment, Small HP/MP Potions" },
+{ name:"Pink Wing", lv:28, map:"Elgaeil", area:"Elgaeil Shore, Rindhock Nest", zed:28000, exp:700, drops:"Lv.20 Equipment, Small HP/MP Potions" },
+{ name:"Blue Wing", lv:30, map:"Elgaeil", area:"Rindhock Nest", zed:30000, exp:750, drops:"Lv.20 Equipment, Small HP/MP Potions" },
+{ name:"Rindhock", lv:30, map:"Elgaeil", area:"Rindhock Nest", zed:150000, exp:3750, drops:"Lv.20 Equipment, Small HP/MP Potions" },
+
+{ name:"Alvis", lv:31, map:"Elgaeil", area:"Beehive 1–3", zed:31000, exp:1500, drops:"Lv.30 Equipment, Small HP/MP Potions" },
+{ name:"Bis", lv:32, map:"Elgaeil", area:"Beehive 2–4, Bis’ Room", zed:32000, exp:2250, drops:"Lv.30 Equipment, Small HP/MP Potions" },
+{ name:"Gunbis", lv:34, map:"Elgaeil", area:"Beehive 3–4, Gunbis’ Room", zed:34000, exp:3750, drops:"Lv.30 Equipment, Small HP/MP Potions" },
+{ name:"Dun Gunbis", lv:40, map:"Elgaeil", area:"Dun Gunbis’ Room", zed:40000, exp:8250, drops:"Lv.30 Equipment, Small HP/MP Potions" },
+
+  // ================================
+// Francis (Lv.41–70)
+// ================================
+
+// Elgaeil → Francis transition
+{ name:"Umbrella Hermit", lv:41, map:"Elgaeil", area:"Wind Cave – West", zed:41000, exp:9000, drops:"Lv.40 Equipment, Small HP/MP Potions" },
+{ name:"Iron Mask", lv:42, map:"Elgaeil", area:"Wind Cave – North", zed:42000, exp:9750, drops:"Lv.40 Equipment, Small HP/MP Potions" },
+{ name:"Stone Lion", lv:44, map:"Elgaeil", area:"Wind Cave – South", zed:44000, exp:11250, drops:"Lv.40 Equipment, Small HP/MP Potions" },
+{ name:"King Frog", lv:50, map:"Elgaeil", area:"East Wind", zed:50000, exp:23250, drops:"Lv.40 Equipment, Small HP/MP Potions" },
+
+// Francis – Azath Sea
+{ name:"Scuba Pooma", lv:51, map:"Francis", area:"Azath Sea 1–2", zed:51000, exp:38250, drops:"Lv.50 Equipment, Small HP/MP Potions" },
+{ name:"Marine Pooma", lv:51, map:"Francis", area:"Azath Sea 1–2", zed:51000, exp:38250, drops:"Lv.50 Equipment, Small HP/MP Potions" },
+{ name:"Pirate Pooma", lv:52, map:"Francis", area:"Azath Sea 2", zed:52000, exp:53250, drops:"Lv.50 Equipment, Small HP/MP Potions" },
+{ name:"Tsus", lv:53, map:"Francis", area:"Azath Sea 3, Azath Hunting Ground 1", zed:53000, exp:68250, drops:"Lv.50 Equipment, Small HP/MP Potions" },
+{ name:"Surfing Tsus", lv:55, map:"Francis", area:"Azath Sea 3, Azath Hunting Ground 1", zed:55000, exp:98250, drops:"Lv.50 Equipment, Small HP/MP Potions" },
+{ name:"Afro Tsus", lv:57, map:"Francis", area:"Azath Hunting Ground 1", zed:57000, exp:128250, drops:"Lv.50 Equipment, Small HP/MP Potions" },
+
+// Francis – Coast & Jungle
+{ name:"Crab", lv:58, map:"Francis", area:"Francis Coast 1–2", zed:58000, exp:143250, drops:"Lv.50 Equipment, Small HP/MP Potions" },
+{ name:"King Crab", lv:58, map:"Francis", area:"Francis Coast 2", zed:58000, exp:143250, drops:"Lv.50 Equipment, Small HP/MP Potions" },
+{ name:"Chubby", lv:59, map:"Francis", area:"Francis Coast 3, Specialty Shop", zed:59000, exp:158250, drops:"Lv.50 Equipment, Small HP/MP Potions" },
+{ name:"Cavy", lv:61, map:"Francis", area:"Specialty Shop, Francis Jungle", zed:61000, exp:188250, drops:"Lv.60 Equipment, Small HP/MP Potions" },
+{ name:"Sleg", lv:64, map:"Francis", area:"Francis Jungle", zed:64000, exp:233250, drops:"Lv.60 Equipment, Small HP/MP Potions" },
+
+// Francis – Coral Reef & Bubble Zones
+{ name:"Feriz", lv:65, map:"Francis", area:"Coral Reef 1–2", zed:65000, exp:248250, drops:"Lv.60 Equipment, Small HP/MP Potions" },
+{ name:"Blue Feriz", lv:65, map:"Francis", area:"Coral Reef 2–3", zed:65000, exp:248250, drops:"Lv.60 Equipment, Small HP/MP Potions" },
+{ name:"Mad Girl", lv:68, map:"Francis", area:"Coral Reef 3", zed:68000, exp:293250, drops:"Lv.60 Equipment, Small HP/MP Potions" },
+{ name:"Mermaid", lv:69, map:"Francis", area:"Giant Bubble 1", zed:69000, exp:308250, drops:"Lv.60 Equipment, Small HP/MP Potions" },
+{ name:"Durong", lv:70, map:"Francis", area:"Giant Bubble 1–3", zed:70000, exp:323250, drops:"Lv.60 Equipment, Small HP/MP Potions" },
+
+// ================================
+// Wonderland (Lv.71–100)
+// ================================
+
+// Giant Bubble → Shipwreck
+{ name:"Super Dugong", lv:71, map:"Francis", area:"Giant Bubble 2–3", zed:71000, exp:338250, drops:"Lv.70 Equipment, Small HP/MP Potions" },
+{ name:"Goopy", lv:72, map:"Francis", area:"Giant Bubble 3", zed:72000, exp:353250, drops:"Lv.70 Equipment, Small HP/MP Potions" },
+
+// Transition to Wonderland Coast
+{ name:"Kraken", lv:73, map:"Francis / Wonderland", area:"Francis Shipwreck 2, Coastal Cliff 2", zed:73000, exp:368250, drops:"Lv.70 Equipment, MP Potions" },
+{ name:"Arc Mermaid", lv:73, map:"Francis / Wonderland", area:"Francis Shipwreck 2, Coastal Cliff 1", zed:73000, exp:368250, drops:"Lv.70 Equipment, MP Potions" },
+{ name:"Octopus", lv:74, map:"Wonderland", area:"Coastal Cliff 1–2, Whale Cave 1", zed:74000, exp:383250, drops:"Lv.70 Equipment, Small HP/MP Potions" },
+{ name:"Krakens", lv:76, map:"Wonderland", area:"Coastal Cliff 2, Whale Cave 1–2", zed:76000, exp:413250, drops:"Lv.70 Equipment, Small HP/MP Potions" },
+{ name:"Octorus", lv:79, map:"Wonderland", area:"Whale Cave 2", zed:79000, exp:458250, drops:"Lv.70 Equipment, Small HP/MP Potions" },
+
+// Shipwreck & Abandoned Shore
+{ name:"Number 12", lv:80, map:"Wonderland", area:"Shipwreck", zed:80000, exp:473250, drops:"Lv.70 Equipment, Small HP/MP Potions" },
+{ name:"Bone Puppy", lv:80, map:"Wonderland", area:"Shipwreck, Abandoned Shore 1", zed:80000, exp:473250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+{ name:"Skinny Roo", lv:81, map:"Wonderland", area:"Abandoned Shore 1–3", zed:81000, exp:488250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+{ name:"Skinny Berman", lv:82, map:"Wonderland", area:"Abandoned Shore 2–3", zed:82000, exp:503250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+{ name:"Skinny Cutlass", lv:84, map:"Wonderland", area:"Abandoned Shore 3", zed:420000, exp:2666250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+
+// Wonderland Main Roads
+{ name:"Stone Mole", lv:85, map:"Wonderland", area:"Main Road 1–2", zed:85000, exp:548250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+{ name:"Karis", lv:86, map:"Wonderland", area:"Main Road 2, Main Entrance", zed:86000, exp:563250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+{ name:"Kallus", lv:87, map:"Wonderland", area:"Main Entrance", zed:87000, exp:578250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+{ name:"Flyer Nomad", lv:88, map:"Wonderland", area:"Wonderland Main Street", zed:88000, exp:593250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+{ name:"Guard", lv:88, map:"Wonderland", area:"Main Street, Wonderland Entrance", zed:88000, exp:593250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+
+// Cactus Forest
+{ name:"Trot Cactus", lv:89, map:"Wonderland", area:"Cactus Forest 1", zed:89000, exp:608250, drops:"Lv.80 Equipment, Small HP/MP Potions" },
+{ name:"Rocker Cactus", lv:90, map:"Wonderland", area:"Cactus Forest 1–2", zed:90000, exp:623250, drops:"Lv.90 Equipment, Medium HP/MP Potions" },
+{ name:"Hip-Hop Cactus", lv:92, map:"Wonderland", area:"Cactus Forest 1–2", zed:92000, exp:653250, drops:"Lv.90 Equipment, Medium HP/MP Potions" },
+
+// Wonderland Urban Area
+{ name:"Bicycle Tsus", lv:93, map:"Wonderland", area:"Parking Lot", zed:93000, exp:668250, drops:"Lv.90 Equipment" },
+{ name:"Parking Attendant", lv:94, map:"Wonderland", area:"Parking Lot, Entrance", zed:94000, exp:683250, drops:"Lv.90 Equipment" },
+{ name:"Street Hustler", lv:95, map:"Wonderland", area:"Market Street 1", zed:95000, exp:698250, drops:"Lv.90 Equipment" },
+{ name:"Gang Member", lv:95, map:"Wonderland", area:"Market Street 1–2", zed:95000, exp:698250, drops:"Lv.90 Equipment" },
+{ name:"Gang Leader", lv:95, map:"Wonderland", area:"Market Street 2", zed:95000, exp:698250, drops:"Lv.90 Equipment" },
+{ name:"Security Robot", lv:96, map:"Wonderland", area:"Market Street 2", zed:96000, exp:713250, drops:"Lv.90 Equipment" },
+
+// Vegetable Zone
+{ name:"Imported Onion", lv:97, map:"Wonderland", area:"Vegetable Zone 1–2", zed:97000, exp:728250, drops:"Lv.90 Equipment" },
+{ name:"Gentle Sheep", lv:98, map:"Wonderland", area:"Vegetable Zone 3–4", zed:98000, exp:743250, drops:"Lv.90 Equipment" },
+{ name:"Grumpy Sheep", lv:98, map:"Wonderland", area:"Vegetable Zone 4–5", zed:98000, exp:743250, drops:"Lv.90 Equipment" },
+{ name:"Domestic Onion", lv:98, map:"Wonderland", area:"Vegetable Zone 2", zed:98000, exp:743250, drops:"Lv.90 Equipment" },
+{ name:"Tough Sheep", lv:98, map:"Wonderland", area:"Vegetable Zone 5", zed:98000, exp:743250, drops:"Lv.90 Equipment" },
+{ name:"Leopard", lv:99, map:"Wonderland", area:"Vegetable Zone 6–7", zed:99000, exp:758250, drops:"Lv.90 Equipment" },
+{ name:"Helix", lv:99, map:"Wonderland", area:"Vegetable Zone 6–7", zed:99000, exp:758250, drops:"Lv.90 Equipment" },
+
+// ================================
+// Hellen (Lv.101–130)
+// ================================
+
+// Early Hellen
+{ name:"Bang Tsus", lv:101, map:"Hellen", area:"Hellen Vegetable Zone 7", zed:101000, exp:1302375, drops:"Lv.100 Equipment" },
+{ name:"Okelu Kid", lv:102, map:"Hellen", area:"Underground Market, South Hellen Route", zed:102000, exp:1452375, drops:"Lv.100 Equipment" },
+{ name:"Spike Kid", lv:102, map:"Hellen", area:"South Hellen Route", zed:102000, exp:1452375, drops:"Lv.100 Equipment" },
+
+// Hellen Mines
+{ name:"Dark Water", lv:104, map:"Hellen", area:"Hellen Mine 1", zed:104000, exp:1752375, drops:"Lv.100 Equipment" },
+{ name:"Hollow Water II", lv:106, map:"Hellen", area:"Hellen Mine 2", zed:106000, exp:2052375, drops:"Lv.100 Equipment" },
+{ name:"Burning Totem", lv:109, map:"Hellen", area:"Hellen Mine 1–3", zed:109000, exp:2502375, drops:"Lv.100 Equipment" },
+{ name:"Mad Totem", lv:111, map:"Hellen", area:"Hellen Mine 3", zed:555000, exp:14011875, drops:"Lv.100 Equipment" },
+
+// Mushroom Hill
+{ name:"Green Loper", lv:112, map:"Hellen", area:"Mushroom Hill 3", zed:112000, exp:2952375, drops:"Lv.110 Equipment" },
+{ name:"Wim", lv:114, map:"Hellen", area:"Mushroom Hill 1–2", zed:114000, exp:3252375, drops:"Lv.110 Equipment" },
+{ name:"Blood Wim", lv:119, map:"Hellen", area:"Mushroom Hill 1–2", zed:119000, exp:4002375, drops:"Lv.110 Equipment" },
+{ name:"Crowned Ladybug", lv:120, map:"Hellen", area:"Mushroom Hill 3", zed:600000, exp:20761875, drops:"Lv.110 Equipment" },
+
+// West Hellen Forest
+{ name:"Mad Axe", lv:121, map:"Hellen", area:"West Hellen Forest 2–3", zed:121000, exp:4302375, drops:"Lv.120 Equipment" },
+{ name:"Bird", lv:121, map:"Hellen", area:"West Hellen Forest 1–2", zed:121000, exp:4302375, drops:"Lv.120 Equipment" },
+{ name:"Gray Bear", lv:121, map:"Hellen", area:"West Hellen Forest 3–4", zed:121000, exp:4302375, drops:"Lv.120 Equipment" },
+{ name:"Hulpine", lv:122, map:"Hellen", area:"West Hellen Forest 4", zed:122000, exp:4452375, drops:"Lv.120 Equipment" },
+
+// Everwood Swamp
+{ name:"Slader", lv:122, map:"Hellen", area:"Everwood Swamp 1", zed:122000, exp:4452375, drops:"Lv.120 Equipment" },
+{ name:"Wood Walker", lv:123, map:"Hellen", area:"Everwood Swamp 1–2", zed:123000, exp:4602375, drops:"Lv.120 Equipment" },
+{ name:"Workvisor", lv:124, map:"Hellen", area:"Everwood Swamp 2", zed:124000, exp:4752375, drops:"Lv.120 Equipment" },
+{ name:"Lumberjack", lv:124, map:"Hellen", area:"Everwood Swamp 3", zed:124000, exp:4752375, drops:"Lv.120 Equipment" },
+{ name:"Cutting Machine", lv:125, map:"Hellen", area:"Everwood Swamp 3", zed:125000, exp:4902375, drops:"Lv.120 Equipment" },
+{ name:"Red Cutting Machine", lv:125, map:"Hellen", area:"Everwood Swamp 4", zed:125000, exp:4902375, drops:"Lv.120 Equipment" },
+{ name:"Deoksoe", lv:126, map:"Hellen", area:"Everwood Swamp 4", zed:126000, exp:5052375, drops:"Lv.120 Equipment" },
+
+// Mine Forest
+{ name:"Birdok", lv:127, map:"Hellen", area:"Mine Forest 1–2", zed:127000, exp:5202375, drops:"Lv.120 Equipment" },
+{ name:"Red Bear", lv:127, map:"Hellen", area:"Mine Forest 1", zed:127000, exp:5202375, drops:"Lv.120 Equipment" },
+{ name:"Gangsoe", lv:129, map:"Hellen", area:"Mine Forest 2–3", zed:129000, exp:5502375, drops:"Lv.120 Equipment" },
+{ name:"Bordi", lv:130, map:"Hellen", area:"Mine Forest 3", zed:130000, exp:5652375, drops:"Lv.120 Equipment" },
+
+// ================================
+// Nagapaz Plateau (Lv.131–160)
+// ================================
+
+// Molsa Mine
+{ name:"Pervert Miner", lv:132, map:"Molsa Mine", area:"Molsa Mine A–C", zed:132000, exp:5952375, drops:"Lv.130 Equipment" },
+{ name:"Drunk Miner", lv:135, map:"Molsa Mine", area:"Molsa Mine B–C", zed:135000, exp:6402375, drops:"Lv.130 Equipment" },
+
+// Swamp Zones
+{ name:"Mud Man", lv:136, map:"Nagapaz Plateau", area:"Swamp Zone 1–5", zed:136000, exp:6552375, drops:"Lv.130 Equipment" },
+{ name:"Big Mud Man", lv:136, map:"Nagapaz Plateau", area:"Swamp Zone 1–5", zed:136000, exp:6552375, drops:"Lv.130 Equipment" },
+{ name:"Swamp Crocodile", lv:137, map:"Nagapaz Plateau", area:"Swamp Zone 2–4", zed:137000, exp:6702375, drops:"Lv.130 Equipment" },
+{ name:"Imp", lv:137, map:"Nagapaz Plateau", area:"Swamp Zone 3–6", zed:137000, exp:6702375, drops:"Lv.130 Equipment" },
+{ name:"Aquvers", lv:139, map:"Nagapaz Plateau", area:"Swamp Zone 4–6", zed:139000, exp:7002375, drops:"Lv.130 Equipment" },
+{ name:"Death Mud Man", lv:139, map:"Nagapaz Plateau", area:"Swamp Zone 5", zed:139000, exp:7002375, drops:"Lv.130 Equipment" },
+
+// Waste Facility
+{ name:"Deviltron", lv:141, map:"Nagapaz Plateau", area:"Swamp Zone 6", zed:141000, exp:7302375, drops:"Lv.140 Equipment" },
+{ name:"Log Can", lv:142, map:"Nagapaz Plateau", area:"Waste Facility 1–2", zed:142000, exp:7452375, drops:"Lv.140 Equipment" },
+{ name:"Stock Can", lv:143, map:"Nagapaz Plateau", area:"Waste Facility 2", zed:143000, exp:7602375, drops:"Lv.140 Equipment" },
+{ name:"Iron Gunner", lv:144, map:"Nagapaz Plateau", area:"Waste Facility 2–3", zed:144000, exp:7752375, drops:"Lv.140 Equipment" },
+{ name:"Chubis", lv:145, map:"Nagapaz Plateau", area:"Waste Facility 3", zed:145000, exp:7902375, drops:"Lv.140 Equipment" },
+
+// Beramos Factory
+{ name:"Bone Fly", lv:146, map:"Nagapaz Plateau", area:"Beramos Factory 1–2", zed:146000, exp:8052375, drops:"Lv.140 Equipment" },
+{ name:"Skull Fly", lv:146, map:"Nagapaz Plateau", area:"Beramos Factory 2", zed:146000, exp:8052375, drops:"Lv.140 Equipment" },
+{ name:"Brock Hammer Man", lv:149, map:"Nagapaz Plateau", area:"Beramos Factory 3", zed:149000, exp:8502375, drops:"Lv.140 Equipment" },
+
+// Contaminated Swamp / Power Plant
+{ name:"Small Merman", lv:150, map:"Nagapaz Plateau", area:"Contaminated Swamp 1–2", zed:150000, exp:12903562, drops:"Lv.140 Equipment" },
+{ name:"Impact Incubus", lv:150, map:"Nagapaz Plateau", area:"Contaminated Swamp 2, Froneus Power Plant", zed:150000, exp:12903562, drops:"Lv.150 Equipment" },
+{ name:"Cannon Turtle", lv:152, map:"Nagapaz Plateau", area:"Froneus Power Plant", zed:152000, exp:15903562, drops:"Lv.150 Equipment" },
+{ name:"Nanzarbo", lv:155, map:"Nagapaz Plateau", area:"Froneus Power Plant", zed:775000, exp:102017812, drops:"Lv.150 Equipment" },
+
+// Transition to Rapel
+{ name:"Dor", lv:156, map:"Hellen", area:"Rapel Path 1", zed:156000, exp:21903562, drops:"Lv.150 Equipment" },
+{ name:"Wooden Puppet", lv:156, map:"Hellen", area:"Rapel Path 1–2", zed:156000, exp:21903562, drops:"Lv.150 Equipment" },
+{ name:"Wooden Bear", lv:157, map:"Hellen", area:"Rapel Path 2", zed:157000, exp:23403562, drops:"Lv.150 Equipment" },
+{ name:"Meitan", lv:158, map:"Hellen", area:"Rapel Path 3", zed:158000, exp:24903562, drops:"Lv.150 Equipment" },
+{ name:"Mar", lv:159, map:"Rapel Desert", area:"Rapel Road 1, Ruins 4–5", zed:159000, exp:26403562, drops:"Lv.150 Equipment" },
+{ name:"Huron Apache", lv:159, map:"Rapel Desert", area:"Ruins 2–5", zed:159000, exp:26403562, drops:"Lv.150 Equipment" },
+{ name:"Horuka Totem", lv:160, map:"Rapel Desert", area:"Ruins 2–4", zed:160000, exp:27903562, drops:"Lv.160 Equipment" },
+
+// ================================
+// Rapel Mountains (Lv.161–171)
+// ================================
+
+// Rapel Desert → Mountains
+{ name:"Barul", lv:163, map:"Rapel Desert", area:"Ruins 1–2", zed:163000, exp:32403562, drops:"Lv.160 Equipment" },
+
+// Rapel Mountain Roads
+{ name:"Snow Stalker", lv:164, map:"Rapel Mountains", area:"Rapel Road 3", zed:164000, exp:33903562, drops:"Lv.160 Equipment" },
+{ name:"Igloo", lv:164, map:"Rapel Mountains", area:"Rapel Road 2", zed:164000, exp:33903562, drops:"Lv.160 Equipment" },
+{ name:"Snorusak", lv:165, map:"Rapel Mountains", area:"Rapel Road 4", zed:165000, exp:35403562, drops:"Lv.160 Equipment" },
+
+// Frozen Caverns
+{ name:"Licorice", lv:166, map:"Rapel Mountains", area:"Frozen Cavern 1–7", zed:166000, exp:36903562, drops:"Lv.160 Equipment" },
+{ name:"Hammer Licorice", lv:167, map:"Rapel Mountains", area:"Frozen Cavern 2–8", zed:167000, exp:38403562, drops:"Lv.160 Equipment" },
+{ name:"Bombella", lv:168, map:"Rapel Mountains", area:"Frozen Cavern 4–6", zed:168000, exp:39903562, drops:"Lv.160 Equipment" },
+{ name:"Taming Licorice", lv:170, map:"Rapel Mountains", area:"Frozen Cavern 7–8", zed:170000, exp:42903562, drops:"Lv.160 Equipment" },
+
+// Eversera Ruins (Entrance)
+{ name:"Hapen", lv:171, map:"Rapel Mountains", area:"Eversera Ruins 1–2", zed:171000, exp:44403562, drops:"Lv.170 Equipment" },
+{ name:"Olperga", lv:171, map:"Rapel Mountains", area:"Eversera Ruins 2–4", zed:171000, exp:44403562, drops:"Lv.170 Equipment" },
+  
+// ================================
+// Eversera / Okelusa (Lv.172–180)
+// ================================
+
+// Eversera Ruins
+{ name:"Shabel", lv:172, map:"Rapel Mountains", area:"Eversera Ruins 4–5", zed:172000, exp:45903562, drops:"Lv.170 Equipment, Large HP/MP Potions" },
+{ name:"Jackal", lv:173, map:"Rapel Mountains", area:"Eversera Ruins 5–7", zed:173000, exp:47403562, drops:"Lv.170 Equipment, Large HP/MP Potions" },
+{ name:"Mammoth", lv:175, map:"Rapel Mountains", area:"Eversera Ruins 6–7", zed:175000, exp:50403562, drops:"Lv.170 Equipment, Large HP/MP Potions" },
+
+// Okelusa Camp
+{ name:"Okelusa Warrior", lv:176, map:"Rapel Mountains", area:"Okelusa Camp 3–4, Ritual Altar", zed:176000, exp:51903562, drops:"Lv.170 Equipment, Large HP/MP Potions" },
+{ name:"Okelusa Hunter", lv:176, map:"Rapel Mountains", area:"Okelusa Camp 4, Ritual Altar", zed:176000, exp:51903562, drops:"Lv.170 Equipment, Large HP/MP Potions" },
+{ name:"Okelusa Comanche", lv:177, map:"Rapel Mountains", area:"Ritual Altar", zed:177000, exp:53403562, drops:"Lv.170 Equipment, Large HP/MP Potions" },
+{ name:"Okelusa Shaman", lv:178, map:"Rapel Mountains", area:"Okelusa Camp 1–2, Execution Grounds", zed:178000, exp:54903562, drops:"Lv.170 Equipment, Large HP/MP Potions" },
+{ name:"Okelusa High Wyvern", lv:179, map:"Rapel Mountains", area:"Okelusa Camp 2, Execution Grounds", zed:179000, exp:56403562, drops:"Lv.170 Equipment, Large HP/MP Potions" },
+
+// Boss
+{ name:"Okelusa", lv:180, map:"Rapel Mountains", area:"Execution Grounds", zed:900000, exp:289517812, drops:"Lv.170 Equipment, Large HP/MP Potions" },
+
+// ================================
+// Hellen – Dark Village (Lv.181–216)
+// ================================
+
+// East Hellen Forest
+{ name:"Swordsman", lv:181, map:"Hellen", area:"East Hellen Forest 1–3", zed:181800, exp:59403562, drops:"Lv.180 Equipment, Large HP/MP Potions" },
+{ name:"Singer Goat", lv:181, map:"Hellen", area:"East Hellen Forest 2–4", zed:181800, exp:59403562, drops:"Lv.180 Equipment, Large HP/MP Potions" },
+{ name:"Magic Goat", lv:182, map:"Hellen", area:"East Hellen Forest 3–4", zed:183618, exp:60903562, drops:"Lv.180 Equipment, Large HP/MP Potions" },
+
+// Purification / Spider Forest
+{ name:"Snake Soldier", lv:183, map:"Hellen", area:"Purification Forest 1–2", zed:185454, exp:62403562, drops:"Lv.180 Equipment, Large HP/MP Potions" },
+{ name:"Snake Lancer", lv:185, map:"Hellen", area:"Purification Forest 2, Spider Forest", zed:189181, exp:65403562, drops:"Lv.180 Equipment, Large HP/MP Potions" },
+{ name:"Raikau", lv:188, map:"Hellen", area:"Spider Forest", zed:194914, exp:69903562, drops:"Lv.180 Equipment, Large HP/MP Potions" },
+
+// Dark Village Entry
+{ name:"Sinky", lv:189, map:"Froneus’ Room", area:"Laboratory Cafeteria 1", zed:196863, exp:71403562, drops:"Lv.180 Equipment, Large HP/MP Potions" },
+{ name:"Glutton Imp", lv:190, map:"Froneus’ Room", area:"Cafeteria 2", zed:198831, exp:72903562, drops:"Lv.180 Equipment, Large HP/MP Potions" },
+
+// Dark Forest
+{ name:"Dust Spirit", lv:204, map:"Dark Village", area:"Dark Forest Path, Fork, Forgotten Path", zed:228552, exp:161105343, drops:"Lv.200 Accessories" },
+{ name:"Green Gero", lv:205, map:"Dark Village", area:"Dark Forest Fork, Forgotten Path 1–2", zed:230837, exp:168605343, drops:"Lv.200 Accessories" },
+{ name:"Red Gero", lv:206, map:"Dark Village", area:"Ruined Forest 1–2, Forest Entrance", zed:233146, exp:176105343, drops:"Lv.200 Accessories" },
+{ name:"Tall Stump", lv:206, map:"Dark Village", area:"Ruined Forest 2, Forgotten Supply Route", zed:233146, exp:176105343, drops:"Lv.200 Accessories" },
+
+// Forest of Ruin
+{ name:"Wulfrid", lv:208, map:"Dark Village", area:"Forest of Ruin 1–2", zed:237832, exp:191105343, drops:"Lv.200 Accessories" },
+{ name:"Wulfrid II", lv:213, map:"Dark Village", area:"Forest of Ruin 2–4", zed:249964, exp:228605343, drops:"Lv.200 Accessories" },
+
+// Graveyard
+{ name:"Upper Zombie", lv:216, map:"Dark Village", area:"Graveyard Entrance, Graveyard 1–2", zed:257538, exp:251105343, drops:"Lv.200 Accessories" },
+{ name:"Upper Zombie II", lv:216, map:"Dark Village", area:"Graveyard 1–2", zed:257538, exp:251105343, drops:"Lv.200 Accessories" },
+  
+// ================================
+// Catacomb (Lv.220–250)
+// ================================
+
+// Upper Catacomb / Cemetery
+{ name:"Skeleton", lv:220, map:"Catacomb", area:"Cemetery 3, Broken Graveyard", zed:267995, exp:281105343, drops:"Lv.200 Accessories" },
+{ name:"Skeleton Archer", lv:223, map:"Catacomb", area:"Broken Graveyard 1–2", zed:276116, exp:303605343, drops:"Lv.200 Accessories" },
+{ name:"Skeleton Knight", lv:225, map:"Catacomb", area:"Broken Graveyard 2", zed:281665, exp:318605343, drops:"Lv.200 Accessories" },
+
+// Catacomb 1F
+{ name:"Creeping Death", lv:226, map:"Catacomb", area:"Catacomb 1F (1–3)", zed:284482, exp:326105343, drops:"Lv.200 Accessories" },
+{ name:"Creeping Death II", lv:232, map:"Catacomb", area:"Catacomb 1F (2–3)", zed:301984, exp:371105343, drops:"Lv.200 Accessories" },
+
+// Catacomb 2F
+{ name:"Milla", lv:233, map:"Catacomb", area:"Catacomb 2F (1–4)", zed:305003, exp:378605343, drops:"Lv.200 Accessories" },
+{ name:"Zombie Ray", lv:239, map:"Catacomb", area:"Catacomb 2F (3–4)", zed:323767, exp:423605343, drops:"Lv.200 Accessories" },
+
+// Catacomb 3F
+{ name:"Ghoul", lv:242, map:"Catacomb", area:"Catacomb 3F (1–4)", zed:333578, exp:446105343, drops:"Lv.200 Accessories" },
+
+// Catacomb Boss-tier
+{ name:"Dead Bone", lv:250, map:"Catacomb", area:"Catacomb 3F (3–4)", zed:361217, exp:755408015, drops:"Lv.200 Accessories" },
+
+// Catacomb Boss
+{ name:"Durahan", lv:250, map:"Catacomb", area:"Durahan’s Room", zed:5418261, exp:7554080156, drops:"Lv.250 Equipment" },
+
+
+// ================================
+// Mandeus’ Domain & Final Bosses (Lv.254–303)
+// ================================
+
+// Mandeus’ Domain – Entrance & Paths
+{ name:"Elros", lv:254, map:"Mandeus’ Domain", area:"Domain Entrance, Domain Path 1–4", zed:375884, exp:905408015, drops:"Lv.200 Accessories" },
+{ name:"Plague Doctor", lv:265, map:"Mandeus’ Domain", area:"Domain Path 1–4", zed:419362, exp:1317908015, drops:"Lv.200 Accessories" },
+{ name:"Hopper", lv:267, map:"Mandeus’ Domain", area:"Corrupted Hunting Ground 1–4", zed:427791, exp:1392908015, drops:"Lv.200 Accessories" },
+{ name:"Goitch", lv:275, map:"Mandeus’ Domain", area:"Corrupted Hunting Ground 1–4", zed:463236, exp:1692908015, drops:"Lv.200 Accessories" },
+
+// Castle Approach
+{ name:"Hoki", lv:285, map:"Mandeus’ Domain", area:"Castle Approach 1–4", zed:511701, exp:2067908015, drops:"Lv.200 Accessories" },
+{ name:"Niki", lv:296, map:"Mandeus’ Domain", area:"Castle Approach 1–4", zed:570889, exp:2480408015, drops:"Lv.200 Accessories" },
+
+// Final Bosses
+{ name:"Neisa", lv:300, map:"Mandeus’ Domain", area:"Neisa’s Room", zed:8911044, exp:39268620234, drops:"Lv.300 Equipment" },
+{ name:"Dasven Robot", lv:303, map:"Dasven Titan Zone", area:"Fortress East 1–2", zed:612070, exp:4208112023, drops:"Lv.300 Accessories" },
+  
+
+  
 ];
 
 // =====================================================
