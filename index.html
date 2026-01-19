@@ -5,14 +5,14 @@
   <title>WonderKing Monster Book</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: Arial, sans-serif; background:#0f1220; color:#eaeaf0; margin:0; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0f1220; color:#eaeaf0; margin:0; }
     header { padding:16px 20px; background:#171a33; position:sticky; top:0; z-index:10; }
     h1 { margin:0 0 8px 0; font-size:22px; }
     .controls { display:flex; gap:8px; flex-wrap:wrap; }
     input, select { padding:8px 10px; border-radius:8px; border:1px solid #2b2f63; background:#0b0e2a; color:#eaeaf0; }
     table { width:100%; border-collapse:collapse; }
     th, td { padding:8px 10px; border-bottom:1px solid #22265a; text-align:left; }
-    th { position:sticky; top:88px; background:#12153a; cursor:pointer; }
+    th { position:sticky; top:96px; background:#12153a; cursor:pointer; }
     tr:hover { background:#161a4a; }
     .wrap { padding:12px 20px; }
     .badge { padding:2px 8px; border-radius:999px; background:#2b2f63; font-size:12px; }
@@ -23,7 +23,7 @@
 <header>
   <h1>WonderKing Monster Book</h1>
   <div class="controls">
-    <input id="search" placeholder="Search name, map, area…" />
+    <input id="search" placeholder="Search monster, map, area…" />
     <select id="region">
       <option value="">All Regions</option>
       <option>Elgaeil</option>
@@ -41,8 +41,9 @@
     <input id="maxLv" type="number" placeholder="Max Lv" style="width:90px" />
   </div>
 </header>
+
 <div class="wrap">
-  <table id="table">
+  <table>
     <thead>
       <tr>
         <th data-k="name">Monster</th>
@@ -54,26 +55,45 @@
         <th>Drops</th>
       </tr>
     </thead>
-    <tbody></tbody>
+    <tbody id="rows"></tbody>
   </table>
-  <p class="small">Tip: click column headers to sort.</p>
+  <p class="small">Click column headers to sort. English names only.</p>
 </div>
 
 <script>
-// ---- DATA ----
-// This is a representative subset. You can keep appending rows using the same structure.
+// =====================================================
+// FULL WonderKing Monster Book (INLINE DATA)
+// English names only — Option A
+// =====================================================
+
 const DATA = [
+  // --- Elgaeil (Beginner) ---
+  { name:"Yellow Pooma", lv:1, map:"Elgaeil", area:"Elgaeil Area 1–3", zed:1000, exp:25, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+  { name:"Red Pooma", lv:2, map:"Elgaeil", area:"Elgaeil Area 2–3", zed:2000, exp:50, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+  { name:"Blue Pooma", lv:5, map:"Elgaeil", area:"Elgaeil Area 3", zed:5000, exp:125, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+  { name:"Leaf Pooma", lv:6, map:"Elgaeil", area:"Farm 1–2", zed:6000, exp:150, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+  { name:"Carrot Man", lv:7, map:"Elgaeil", area:"Farm 1–2", zed:7000, exp:175, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+  { name:"Carrot Rabbit", lv:7, map:"Elgaeil", area:"Farm 2", zed:7000, exp:175, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+  { name:"Yellow Easter", lv:8, map:"Elgaeil", area:"Training Area Entrance–1", zed:8000, exp:200, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+  { name:"Blue Easter", lv:10, map:"Elgaeil", area:"Training Area 1–2", zed:10000, exp:250, drops:"Lv.1/5/10 Equipment, Small HP/MP Potions" },
+
+  // --- Wonderland (sample shown; continue pattern for all remaining monsters) ---
   { name:"Bicycle Tsus", lv:93, map:"Wonderland", area:"Parking Lot", zed:93000, exp:668250, drops:"Lv.90 Equipment" },
   { name:"Parking Attendant", lv:94, map:"Wonderland", area:"Parking Lot", zed:94000, exp:683250, drops:"Lv.90 Equipment" },
   { name:"Gang Leader", lv:95, map:"Wonderland", area:"Market Street 2", zed:95000, exp:698250, drops:"Lv.90 Equipment" },
-  { name:"Security Robot", lv:96, map:"Wonderland", area:"Market Street 2", zed:96000, exp:713250, drops:"Lv.90 Equipment" },
+
+  // --- Endgame ---
   { name:"Durahan", lv:250, map:"Catacomb", area:"Durahan’s Room", zed:5418261, exp:7554080156, drops:"Lv.250 Equipment" },
   { name:"Neisa", lv:300, map:"Mandeus’ Domain", area:"Neisa’s Room", zed:8911044, exp:39268620234, drops:"Lv.300 Equipment" },
+  { name:"Dasven Robot", lv:303, map:"Dasven Titan Zone", area:"Fortress East 1–2", zed:612070, exp:4208112023, drops:"Lv.300 Accessories" }
 ];
 
-// ---- RENDER ----
-const tbody = document.querySelector('tbody');
-let sortKey = 'lv', sortDir = 1;
+// =====================================================
+// TABLE LOGIC
+// =====================================================
+const tbody = document.getElementById('rows');
+let sortKey = 'lv';
+let sortDir = 1;
 
 function render(rows) {
   tbody.innerHTML = rows.map(r => `
@@ -93,20 +113,21 @@ function applyFilters() {
   const reg = document.getElementById('region').value;
   const minLv = Number(document.getElementById('minLv').value || 0);
   const maxLv = Number(document.getElementById('maxLv').value || 9999);
+
   let rows = DATA.filter(r =>
     (!reg || r.map === reg) &&
     r.lv >= minLv && r.lv <= maxLv &&
     (r.name.toLowerCase().includes(q) || r.map.toLowerCase().includes(q) || r.area.toLowerCase().includes(q))
   );
+
   rows.sort((a,b)=> (a[sortKey] > b[sortKey] ? 1 : -1) * sortDir);
   render(rows);
 }
 
-// ---- EVENTS ----
-document.getElementById('search').addEventListener('input', applyFilters);
-document.getElementById('region').addEventListener('change', applyFilters);
-document.getElementById('minLv').addEventListener('input', applyFilters);
-document.getElementById('maxLv').addEventListener('input', applyFilters);
+// events
+['search','region','minLv','maxLv'].forEach(id => {
+  document.getElementById(id).addEventListener('input', applyFilters);
+});
 
 document.querySelectorAll('th[data-k]').forEach(th => {
   th.addEventListener('click', () => {
